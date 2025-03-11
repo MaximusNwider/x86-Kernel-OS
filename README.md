@@ -1,4 +1,4 @@
-# Major OS Hierarchy
+# OS Hierarchy
 
 ## 1. **Bootloader**
    - **Responsibilities**:
