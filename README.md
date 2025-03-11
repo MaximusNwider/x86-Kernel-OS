@@ -1,0 +1,29 @@
+   - **`boot/`**  
+     - Contains the bootloader code,
+     - Could be include different bootloader. **boot signature: 0x420**
+   - **`arch/x86/`**  
+     - Architecture-specific routines (GDT, IDT setup, interrupt assembly stubs).  
+     - Low-level concurrency (spinlock implementations, atomic ops).  
+     - Paging structures (page directories, page tables).
+   - **`kernel/`**  
+     - **Init**: Main kernel entry function, calls to set up memory, interrupts, etc.  
+     - **Scheduler**: Contains scheduling policies, run queues, context switch code.  
+     - **Process Management**: PCB/TCB creation, forking, etc.  
+     - **IPC**: Message queues, pipes, shared memory.  
+     - **Synchronization**: Spinlock, mutex, semaphore code.  
+   - **`mm/`**  
+     - Physical page allocator.  
+     - Kernel heap allocator.  
+     - Paging logic.  
+   - **`drivers/`**  
+     - Subdirectories for **PCI**, **storage**, **network**, **input**, **video**.  
+     - Device initialization routines, interrupt handlers, and hardware-specific drivers.  
+   - **`fs/`**  
+     - VFS interface, filesystem drivers (FAT, NTFS, etc.).  
+     - Buffer cache code, directory/file operations.  
+   - **`lib/`**  
+     - Generic data structures (linked lists, queues, heaps), as well as sorting/searching algorithms.  
+     - Potential library of common functions typically present in math library.
+   - **`include/`**  
+     - Header files for each subsystem.  
+    
