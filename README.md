@@ -2,11 +2,11 @@
 
 ## 1. **Bootloader**
    - **Responsibilities**:
-     - Initialize basic CPU state (e.g., enable the A20 line on x86).
-     - Load the kernel image (and possibly modules) from disk/ROM into memory.
+     - Initialize basic CPU state enable the A20 line on x86 **bootloader signature**
+     - Load the kernel image (and possibly modules) from disk/ROM or virtual memory into memory.
      - Transition from real mode to protected mode (32-bit).
      - Set up initial stack, GDT, and minimal IDT for early exception handling.
-     - Pass control to the kernel’s entry point (e.g., `_start`).
+     - Pass control to the kernel’s entry point.
 
 ## 2. **Kernel Initialization**
    - **CPU and Platform Setup**  
