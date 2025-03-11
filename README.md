@@ -1,6 +1,6 @@
    - **`boot/`**  
-     - Contains the bootloader code,
-     - Could be include different bootloader. **boot signature: 0x420**
+     - Contains the bootloader code, **boot signature: 0x420**
+     - Could be include different bootloader. 
    - **`arch/x86/`**  
      - Architecture-specific routines (GDT, IDT setup, interrupt assembly stubs).  
      - Low-level concurrency (spinlock implementations, atomic ops).  
@@ -11,7 +11,7 @@
      - **Process Management**: PCB/TCB creation, forking, etc.  
      - **IPC**: Message queues, pipes, shared memory.  
      - **Synchronization**: Spinlock, mutex, semaphore code.  
-   - **`mm/`**  
+   - **`mem/`**  
      - Physical page allocator.  
      - Kernel heap allocator.  
      - Paging logic.  
