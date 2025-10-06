@@ -1,10 +1,10 @@
-# PeachOS Kernel — Boot Pipeline & Components
+# The Kernel — Boot Pipeline & Components
 
 > Minimal x86 kernel that brings up VGA text I/O, GDT/TSS, paging, IDT/ISR80h, keyboard, FS/disk, and a tiny process loader + scheduler.
 
 ## Boot Pipeline (diagram)
 If present in your repo, this image will render the sequence at a glance:
-![Boot Pipeline](.doc/flowchart.svg)
+![Boot Pipeline](doc/flowchart.svg)
 
 ## Quick Description
 - **Console:** VGA text at `0xB8000` with simple `print`, newline, and backspace handling.
