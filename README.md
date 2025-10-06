@@ -1,9 +1,5 @@
 # Developing a Multithreaded Kernel from Scratch
 
-Welcome to our comprehensive kernel development course, meticulously designed for learners who are interested in creating a multitasking operating system and kernel from the ground up. This course assumes no previous experience in kernel programming, ensuring a complete understanding of concepts starting from the basics. This is the code repository you will build from scratch when learning kernel development in our kernel course.
-
-[![Get the Course](https://img.shields.io/badge/Get%20the%20Course-Discount%20Link-blue?style=for-the-badge&logo=appveyor)](https://dragonzap.com/course/developing-a-multithreaded-kernel-from-scratch?coupon=GITHUBKERNELDISCOUNT)
-
 ## About this Course
 
 The course is divided into several main sections:
@@ -67,4 +63,3 @@ By the end of the course, you will acquire skills in:
 - Debugging disassembled machine code
 - Debugging your kernel in an emulator with GDB
 
-Ready to begin your kernel development journey? [Enroll in the course now](https://dragonzap.com/course/developing-a-multithreaded-kernel-from-scratch?coupon=GITHUBKERNELDISCOUNT) with a special discount!
