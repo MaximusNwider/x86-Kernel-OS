@@ -2,6 +2,7 @@
 #include "kernel.h"
 #include <stddef.h>
 #include <stdint.h>
+#include "config.h"
 
 
 /*
@@ -20,7 +21,7 @@
 #include "disk/streamer.h"
 #include "task/tss.h"
 #include "gdt/gdt.h"
-#include "config.h"
+
 #include "status.h"
 */
 
