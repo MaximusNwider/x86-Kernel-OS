@@ -1,0 +1,55 @@
+# Kernel/OS descriptor (human-friendly manifest)
+
+[meta]
+name = "MAN-kernel"
+arch = "x86"
+mode = "protected"
+paging = true
+version = "0.1.0"
+entry = "kernel_main"
+video_mode = "VGA_text_80x25"
+vga_fb = "0xB8000"
+
+[gdt]
+# Index -> selector = index * 8
+entries = [
+  {index=0, selector="0x00", kind="null",   base="0x00000000", limit="0x00000000", type="0x00"},
+  {index=1, selector="0x08", kind="code0",  base="0x00000000", limit="0xFFFFFFFF", type="0x9A"},
+  {index=2, selector="0x10", kind="data0",  base="0x00000000", limit="0xFFFFFFFF", type="0x92"},
+  {index=3, selector="0x18", kind="code3",  base="0x00000000", limit="0xFFFFFFFF", type="0xF8"},
+  {index=4, selector="0x20", kind="data3",  base="0x00000000", limit="0xFFFFFFFF", type="0xF2"},
+  {index=5, selector="0x28", kind="tss",    base="&tss",       limit="sizeof(tss)", type="0xE9"}
+]
+
+[tss]
+selector = "0x28"
+esp0 = "0x600000"
+ss0 = "KERNEL_DATA_SELECTOR"
+
+[paging]
+model = "4GB_identity_chunk"
+flags = ["PRESENT", "WRITEABLE", "ACCESS_FROM_ALL"] # user-accessible pages for syscall/userland
+
+[memory]
+heap = { status="initialized" }
+
+[interrupts]
+idt = { status="initialized" }
+isr80h = { status="registered" }
+
+[input]
+keyboard = { status="initialized" }
+
+[storage]
+fs = { status="initialized" }
+disk = { status="probed_and_initialized" }
+
+[process_bootstrap]
+binaries = [
+  { path = "0:/blank.elf", argv = ["Testing!"] },
+  { path = "0:/blank.elf", argv = ["Abc!"] }
+]
+
+[scheduler]
+first_entry = "task_run_first_ever_task"
+idle_behavior = "spin_loop_in_kernel"

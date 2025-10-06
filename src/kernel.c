@@ -2,6 +2,9 @@
 #include "kernel.h"
 #include <stddef.h>
 #include <stdint.h>
+
+
+/*
 #include "idt/idt.h"
 #include "memory/heap/kheap.h"
 #include "memory/paging/paging.h"
@@ -19,6 +22,7 @@
 #include "gdt/gdt.h"
 #include "config.h"
 #include "status.h"
+*/
 
 uint16_t* video_mem = 0;
 uint16_t terminal_row = 0;
